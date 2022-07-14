@@ -19,7 +19,7 @@ public class Unit : MonoBehaviour
   void Start()
   {
     gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
-    LevelGrid.Instance.SetUnitAtGridPosition(gridPosition, this);
+    LevelGrid.Instance.AddUnitAtGridPosition(gridPosition, this);
   }
 
   // Update is called once per frame

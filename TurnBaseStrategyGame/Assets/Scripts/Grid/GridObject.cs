@@ -14,22 +14,33 @@ public class GridObject : MonoBehaviour
   {
     this.gridSystem = gridSystem;
     this.gridPosition = gridPosition;
-    unitList = new List<Unit>;
+    unitList = new List<Unit>();
 
   }
 
   public override string ToString()
   {
-    return gridPosition.ToString() + "\n" + unit;
+    string unitString = "";
+    foreach (Unit unit in unitList)
+    {
+      unitString += unit + "\n";
+    }
+    return gridPosition.ToString() + "\n" + unitString;
   }
 
-  public void SetUnit(Unit unit)
+  public void AddUnit(Unit unit)
   {
-    this.unit = unit;
+    unitList.Add(unit);
   }
 
-  public Unit GetUnit()
+  public void RemoveUnit(Unit unit)
   {
-    return unit;
+
+    unitList.Remove(unit);
+  }
+
+  public List<Unit> GetUnitList()
+  {
+    return unitList;
   }
 }
